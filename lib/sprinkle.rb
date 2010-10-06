@@ -5,9 +5,11 @@ require 'active_support'
 require 'active_support/version'
 if ActiveSupport::VERSION::MAJOR > 2
   require 'active_support/dependencies'
+  require 'active_support/all'
   ActiveSupport::Dependencies.autoload_paths << File.dirname(__FILE__)
 else
-  ActiveSupport::Dependencies.load_paths << File.dirname(__FILE__)
+  
+  Dependencies.load_paths << File.dirname(__FILE__)
 end
 
 # Configure active support to log auto-loading of dependencies
